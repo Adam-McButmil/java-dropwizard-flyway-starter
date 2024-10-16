@@ -62,4 +62,26 @@ public class ProjectDao {
         return null;
     }
 
+    public int createProject(final Project project) throws SQLException {
+        Connection conn = DatabaseConnector.getConnection();
+
+        String insertStatement =
+                "INSERT INTO Project (Name, Description, Price) VALUES (?,?,?);";
+
+        PreparedStatement pst = conn.prepareStatement(insertStatement,
+                Statement.RETURN_GENERATED_KEYS);
+        pst.setString(1, product.getName());
+        pst.setString(2, product.getDescription());
+        pst.setDouble(3, product.getPrice());
+
+        pst.executeUpdate();
+
+        ResultSet res = pst.getGeneratedKeys();
+        if (res.next()) {
+            return res.getInt(1);
+        }
+
+        return -1;
+    }
+
 }
