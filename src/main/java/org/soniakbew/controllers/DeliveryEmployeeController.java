@@ -35,7 +35,6 @@ public class DeliveryEmployeeController {
             ).build();
         }
     }
-  
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
