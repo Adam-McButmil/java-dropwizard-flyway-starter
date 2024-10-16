@@ -1,5 +1,4 @@
 package org.soniakbew.services;
-
 import org.soniakbew.daos.DeliveryEmployeeDao;
 import org.soniakbew.exceptions.DoesNotExistException;
 import org.soniakbew.exceptions.Entity;
@@ -23,6 +22,7 @@ public class DeliveryEmployeeService {
             throws SQLException {
         return deliveryEmployeeDao.getDeliveryEmployeeById(id);
     }
+
     public void deleteDeliveryEmployee(final int id) throws SQLException,
             DoesNotExistException {
         DeliveryEmployee deliveryEmployee =

@@ -3,7 +3,6 @@ package org.soniakbew.controllers;
 import io.swagger.annotations.Api;
 import org.soniakbew.exceptions.DoesNotExistException;
 import org.soniakbew.services.DeliveryEmployeeService;
-
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -36,7 +35,6 @@ public class DeliveryEmployeeController {
             ).build();
         }
     }
-
     @GET
     @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
