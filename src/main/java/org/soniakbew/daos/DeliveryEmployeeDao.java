@@ -46,8 +46,9 @@ public class DeliveryEmployeeDao {
         try (Connection connection = DatabaseConnector.getConnection()) {
 
             String query = "SELECT deliveryEmployeeId, `name`,"
-+ "salary, bankAccountNumber, "
-+ "nationalInsuranceNumber FROM deliveryEmployee WHERE deliveryEmployeeId=?;";
+                    + "salary, bankAccountNumber, "
+                    + "nationalInsuranceNumber FROM deliveryEmployee"
+                    + "WHERE deliveryEmployeeId=?;";
 
             PreparedStatement statement = connection.prepareStatement(query);
 
