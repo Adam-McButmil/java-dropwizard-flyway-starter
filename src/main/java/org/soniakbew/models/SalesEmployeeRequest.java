@@ -30,4 +30,52 @@ public class SalesEmployeeRequest {
         this.nationalInsuranceNo = nationalInsuranceNo;
         this.commissionRate = commissionRate;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(final String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(final String lastName) {
+        this.lastName = lastName;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(final double salary) {
+        this.salary = salary;
+    }
+
+    public String getBankAccountNo() {
+        return bankAccountNo;
+    }
+
+    public void setBankAccountNo(final String bankAccountNo) {
+        this.bankAccountNo = bankAccountNo;
+    }
+
+    public String getNationalInsuranceNo() {
+        return nationalInsuranceNo;
+    }
+
+    public void setNationalInsuranceNo(final String nationalInsuranceNo) {
+        this.nationalInsuranceNo = nationalInsuranceNo;
+    }
+
+    public float getCommissionRate() {
+        return commissionRate;
+    }
+
+    public void setCommissionRate(final float commissionRate) {
+        this.commissionRate = commissionRate;
+    }
 }
