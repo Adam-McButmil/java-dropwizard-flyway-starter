@@ -49,8 +49,8 @@ public class SalesEmployeeDao {
                 throws SQLException {
                 Connection c = DatabaseConnector.getConnection();
                 String insertStatement = "INSERT INTO salesEmployees"
-                        + "(firstName,lastName,salary,bankAccountNumber"
-                        + "nationalInsuranceNumber)"
+                        + " (firstName,lastName,salary,bankAccountNumber,"
+                        + " nationalInsuranceNumber)"
                         + " VALUES(?,?,?,?,?,?);";
                 PreparedStatement st = c.prepareStatement(
                         insertStatement, Statement.RETURN_GENERATED_KEYS);
@@ -92,7 +92,7 @@ public class SalesEmployeeDao {
     public void deleteSalesEmployee(final int id) throws SQLException {
         Connection c = DatabaseConnector.getConnection();
         String deleteStatement = "DELETE FROM salesEmployees"
-                + "WHERE SalesEmployeeID = ?";
+                + " WHERE SalesEmployeeID = ?";
         PreparedStatement st = c.prepareStatement(deleteStatement);
         st.setInt(1, id);
         st.executeUpdate();
