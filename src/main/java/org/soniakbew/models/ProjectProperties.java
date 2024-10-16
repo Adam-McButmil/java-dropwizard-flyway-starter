@@ -1,4 +1,4 @@
-package org.example.models;
+package org.soniakbew.models;
 import org.joda.time.DateTime;
 
 public class ProjectProperties {

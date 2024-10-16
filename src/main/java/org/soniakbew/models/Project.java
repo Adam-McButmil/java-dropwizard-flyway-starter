@@ -1,4 +1,4 @@
-package org.example.models;
+package org.soniakbew.models;
 
 public class Project {
     private int projectId;
