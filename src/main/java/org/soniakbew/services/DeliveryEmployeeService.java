@@ -25,7 +25,8 @@ public class DeliveryEmployeeService {
     }
     public void deleteDeliveryEmployee(final int id) throws SQLException,
             DoesNotExistException {
-        DeliveryEmployee deliveryEmployee = deliveryEmployeeDao.getDeliveryEmployeeById(id);
+        DeliveryEmployee deliveryEmployee =
+                deliveryEmployeeDao.getDeliveryEmployeeById(id);
         if (deliveryEmployee == null) {
             throw new DoesNotExistException(Entity.DELIVERY_EMPLOYEE);
         }
