@@ -5,9 +5,9 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
-import org.soniakbew.models.TestController;
-import org.soniakbew.daos.TestDao;
-import org.soniakbew.services.TestService;
+import org.soniakbew.controllers.ClientController;
+import org.soniakbew.daos.ClientDao;
+import org.soniakbew.services.ClientService;
 
 public class TestApplication extends Application<TestConfiguration> {
     public static void main(final String[] args) throws Exception {
@@ -30,8 +30,15 @@ public class TestApplication extends Application<TestConfiguration> {
     @Override
     public void run(final TestConfiguration configuration,
                     final Environment environment) {
-        environment.jersey()
-                .register(new TestController(new TestService(new TestDao())));
+
+        environment.jersey().register(
+                new ClientController(
+                        new ClientService(
+                                new ClientDao()
+                        )
+                )
+        );
+
     }
 
 }
