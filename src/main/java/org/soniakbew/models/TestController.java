@@ -1,4 +1,4 @@
-package org.soniakbew.controllers;
+package org.soniakbew.models;
 
 import io.swagger.annotations.Api;
 import org.soniakbew.services.TestService;

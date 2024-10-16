@@ -23,4 +23,20 @@ public class DeliveryEmployeeRequest {
         this.bankAccountNumber = bankAccountNumber;
         this.nationalInsuranceNumber = nationalInsuranceNumber;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public String getBankAccountNumber() {
+        return bankAccountNumber;
+    }
+
+    public String getNationalInsuranceNumber() {
+        return nationalInsuranceNumber;
+    }
 }

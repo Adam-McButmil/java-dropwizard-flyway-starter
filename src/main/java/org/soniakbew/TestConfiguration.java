@@ -14,7 +14,7 @@ public class TestConfiguration extends Configuration {
             new SwaggerBundleConfiguration();
     @JsonProperty("swagger")
     public SwaggerBundleConfiguration getSwagger() {
-        swagger.setResourcePackage("org.example.controllers");
+        swagger.setResourcePackage("org.soniakbew.controllers");
         String[] schemes = {"http", "https"};
         swagger.setSchemes(schemes);
         return swagger;

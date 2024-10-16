@@ -3,5 +3,5 @@ CREATE TABLE projectDeliveryEmployee (
     deliveryEmployeeId INT NOT NULL,
     PRIMARY KEY(projectId, deliveryEmployeeId),
     FOREIGN KEY(projectId) REFERENCES project(projectId),
-    FOREIGN KEY(deliveryEmployeeId) REFERENCES deliveryEmployee(deliveryEmployeeId),
+    FOREIGN KEY(deliveryEmployeeId) REFERENCES deliveryEmployee(deliveryEmployeeId)
 );
