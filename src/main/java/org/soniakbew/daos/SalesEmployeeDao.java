@@ -50,7 +50,7 @@ public class SalesEmployeeDao {
                 Connection c = DatabaseConnector.getConnection();
                 String insertStatement = "INSERT INTO salesEmployee"
                         + "(firstName,lastName,salary,bankAccountNumber"
-                        + "nationalInsuranceNumber,comissionRate)"
+                        + "nationalInsuranceNumber,commissionRate)"
                         + " VALUES(?,?,?,?,?,?)";
                 PreparedStatement st = c.prepareStatement(
                         insertStatement, Statement.RETURN_GENERATED_KEYS);
