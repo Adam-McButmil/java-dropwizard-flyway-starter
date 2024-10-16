@@ -35,7 +35,7 @@ public class SalesEmployeeDao {
                             resultSet.getDouble("salary"),
                             resultSet.getString("bankAccountNumber"),
                             resultSet.getString("nationalInsuranceNumber"),
-                            resultSet.getFloat("comissionRate")
+                            resultSet.getFloat("commissionRate")
                     );
                     salesEmployees.add(salesEmployee);
                 }
@@ -48,10 +48,10 @@ public class SalesEmployeeDao {
         )
                 throws SQLException {
                 Connection c = DatabaseConnector.getConnection();
-                String insertStatement = "INSERT INTO salesEmployee"
+                String insertStatement = "INSERT INTO salesEmployees"
                         + "(firstName,lastName,salary,bankAccountNumber"
-                        + "nationalInsuranceNumber,commissionRate)"
-                        + " VALUES(?,?,?,?,?,?)";
+                        + "nationalInsuranceNumber)"
+                        + " VALUES(?,?,?,?,?,?);";
                 PreparedStatement st = c.prepareStatement(
                         insertStatement, Statement.RETURN_GENERATED_KEYS);
                 st.setString(firstNameIndex,
@@ -77,9 +77,9 @@ public class SalesEmployeeDao {
                  final SalesEmployeeRequest salesEmployeeRequest)
                 throws SQLException {
             Connection c = DatabaseConnector.getConnection();
-            String updateStatement = "UPDATE salesEmployee "
-                    + "SET fistName = ?, lastName = ? "
-                    + ",salary =?, bankAccountNumber =?, WHERE OrderID = ?";
+            String updateStatement = "UPDATE salesEmployees "
+                    + "SET firstName = ?, lastName = ? "
+                    + ",salary =?, bankAccountNumber =? WHERE OrderID = ?";
             PreparedStatement st = c.prepareStatement(updateStatement);
             st.setString(firstNameIndex, salesEmployeeRequest.getFirstName());
             st.setString(lastNameIndex, salesEmployeeRequest.getLastName());
@@ -91,8 +91,8 @@ public class SalesEmployeeDao {
 
     public void deleteSalesEmployee(final int id) throws SQLException {
         Connection c = DatabaseConnector.getConnection();
-        String deleteStatement = "DELETE FROM salesEmployee"
-                + "WHERE salesEmployeeID = ?";
+        String deleteStatement = "DELETE FROM salesEmployees"
+                + "WHERE SalesEmployeeID = ?";
         PreparedStatement st = c.prepareStatement(deleteStatement);
         st.setInt(1, id);
         st.executeUpdate();
