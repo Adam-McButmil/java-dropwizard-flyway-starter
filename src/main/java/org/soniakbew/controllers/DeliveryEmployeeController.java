@@ -4,6 +4,7 @@ import io.swagger.annotations.Api;
 import org.soniakbew.exceptions.DoesNotExistException;
 import org.soniakbew.services.DeliveryEmployeeService;
 
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -54,6 +55,18 @@ public class DeliveryEmployeeController {
 
     }
 
-
-
+    @DELETE
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteDeliveryEmployee(final @PathParam("id") int id) {
+        try {
+            deliveryEmployeeService.deleteDeliveryEmployee(id);
+            return Response.noContent().build();
+        } catch (SQLException e) {
+            return Response.serverError().build();
+        } catch (DoesNotExistException e) {
+            return Response.status(Response.Status.NOT_FOUND)
+                    .entity(e.getMessage()).build();
+        }
+    }
 }
