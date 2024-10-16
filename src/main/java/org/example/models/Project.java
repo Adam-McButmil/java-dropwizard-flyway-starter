@@ -25,8 +25,6 @@ public class Project {
         this.salesEmployeeId = salesEmployeeId;
         this.projProps = projProps;
     }
-
-
     public int getProjectId() {
         return projectId;
     }
