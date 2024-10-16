@@ -4,10 +4,10 @@ import io.swagger.annotations.Api;
 import org.soniakbew.exceptions.FailedToCreateException;
 import org.soniakbew.exceptions.InvalidException;
 import org.soniakbew.models.Project;
-import org.soniakbew.services.ClientService;
+import org.soniakbew.models.ProjectProperties;
 import org.soniakbew.services.ProjectService;
 
-import javax.ws.rs.GET;
+
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -25,11 +25,13 @@ public class ProjectController {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public Response createOrder(final Project project) {
+    public Response createProject(final Project project,
+                                  final ProjectProperties projectProperties) {
         try {
             return Response
                     .status(Response.Status.CREATED)
-                    .entity(project.createProject(project))
+                    .entity(projectService.createProject(
+                            project, projectProperties))
                     .build();
         } catch (FailedToCreateException | SQLException e) {
             System.out.println(e.getMessage());

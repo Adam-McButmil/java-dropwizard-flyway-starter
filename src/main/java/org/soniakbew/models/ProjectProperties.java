@@ -35,7 +35,7 @@ public class ProjectProperties {
         this.finishDate = finishDate;
     }
 
-    public double getCommissionRate() {
+    public float getCommissionRate() {
         return commissionRate;
     }
 
