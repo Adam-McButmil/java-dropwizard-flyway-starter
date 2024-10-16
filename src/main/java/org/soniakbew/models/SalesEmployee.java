@@ -7,6 +7,7 @@ public class SalesEmployee {
     private double salary;
     private String bankAccountNo;
     private String nationalInsuranceNo;
+    private float commissionRate;
 
     public SalesEmployee(
             final int salesEmployeeId,
@@ -14,13 +15,15 @@ public class SalesEmployee {
             final String lastName,
             final double salary,
             final String bankAccountNo,
-            final String nationalInsuranceNo) {
+            final String nationalInsuranceNo,
+            final float commissionRate) {
         this.salesEmployeeId = salesEmployeeId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
         this.bankAccountNo = bankAccountNo;
         this.nationalInsuranceNo = nationalInsuranceNo;
+        this.commissionRate = commissionRate;
     }
 
     public int getSalesEmployeeId() {
@@ -71,4 +74,11 @@ public class SalesEmployee {
         this.nationalInsuranceNo = nationalInsuranceNo;
     }
 
+    public float getCommissionRate() {
+        return commissionRate;
+    }
+
+    public void setCommissionRate(final float commissionRate) {
+        this.commissionRate = commissionRate;
+    }
 }
