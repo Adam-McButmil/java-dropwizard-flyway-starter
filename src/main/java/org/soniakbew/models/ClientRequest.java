@@ -16,4 +16,20 @@ public class ClientRequest {
         this.clientId = clientId;
         this.name = name;
     }
+
+    public int getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(final int clientId) {
+        this.clientId = clientId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(final String name) {
+        this.name = name;
+    }
 }
