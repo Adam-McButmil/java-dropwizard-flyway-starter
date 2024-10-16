@@ -51,7 +51,7 @@ public class SalesEmployeeDao {
                 String insertStatement = "INSERT INTO salesEmployees"
                         + " (firstName,lastName,salary,bankAccountNumber,"
                         + " nationalInsuranceNumber)"
-                        + " VALUES(?,?,?,?,?,?);";
+                        + " VALUES(?,?,?,?,?);";
                 PreparedStatement st = c.prepareStatement(
                         insertStatement, Statement.RETURN_GENERATED_KEYS);
                 st.setString(firstNameIndex,
