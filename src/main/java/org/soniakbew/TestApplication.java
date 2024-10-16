@@ -6,8 +6,11 @@ import io.dropwizard.setup.Environment;
 import io.federecio.dropwizard.swagger.SwaggerBundle;
 import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 import org.soniakbew.controllers.ClientController;
+import org.soniakbew.controllers.DeliveryEmployeeController;
 import org.soniakbew.daos.ClientDao;
+import org.soniakbew.daos.DeliveryEmployeeDao;
 import org.soniakbew.services.ClientService;
+import org.soniakbew.services.DeliveryEmployeeService;
 
 public class TestApplication extends Application<TestConfiguration> {
     public static void main(final String[] args) throws Exception {
@@ -35,6 +38,14 @@ public class TestApplication extends Application<TestConfiguration> {
                 new ClientController(
                         new ClientService(
                                 new ClientDao()
+                        )
+                )
+        );
+
+        environment.jersey().register(
+                new DeliveryEmployeeController(
+                        new DeliveryEmployeeService(
+                                new DeliveryEmployeeDao()
                         )
                 )
         );
