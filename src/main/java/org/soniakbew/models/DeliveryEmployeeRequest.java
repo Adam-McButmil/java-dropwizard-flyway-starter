@@ -52,7 +52,9 @@ public class DeliveryEmployeeRequest {
         return nationalInsuranceNumber;
     }
 
-    public void setNationalInsuranceNumber(final String nationalInsuranceNumber) {
+    public void setNationalInsuranceNumber(
+        final String nationalInsuranceNumber
+    ) {
         this.nationalInsuranceNumber = nationalInsuranceNumber;
     }
 }
