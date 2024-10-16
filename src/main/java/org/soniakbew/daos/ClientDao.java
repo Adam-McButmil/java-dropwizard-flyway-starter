@@ -44,6 +44,7 @@ public class ClientDao {
             statement.setInt(1, clientId);
 
             ResultSet resultSet = statement.executeQuery();
+
             if (resultSet.next()) {
                 return clientFromResultsSet(resultSet);
             }
